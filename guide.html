@@ -1,0 +1,42 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="用虚构对照判断代号替换会丢掉什么信息；了解同页恢复的条件，以及文字与截图分别处理的步骤。"><link rel="canonical" href="https://before-ai-text-20261017.astutegoby17.chatgpt.site/guide"><title>发给AI前怎么替换信息、会不会影响回答？ · 使用流程</title><style>
+:root{--bg:#f4f6f7;--ink:#142d3c;--blue:#2057b4;--line:#d3dce2}*{box-sizing:border-box}body{background:var(--bg);color:var(--ink);font:15px/1.7 system-ui,'Microsoft YaHei',sans-serif;margin:0}header,main,footer{max-width:1180px;margin:auto;padding:24px}header{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);align-items:center}.brand{font-weight:800;font-size:19px}a{color:var(--blue)}.pill{font-size:12px;color:#365267;background:#e1eaf2;padding:5px 12px;border-radius:20px}h1{font-size:clamp(28px,4vw,46px);line-height:1.3;letter-spacing:-1px;margin:20px 0 14px}p{max-width:850px}.muted{color:#526779;font-size:13px}.hero{margin-bottom:26px}.notice{padding:12px 16px;border-left:3px solid #ad7418;background:#fff3d9;font-size:14px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:24px;min-width:0}h2{font-size:19px;margin:0 0 14px}.step{color:var(--blue);font-size:13px;letter-spacing:1px}label{display:block;font-size:14px;font-weight:650;margin:16px 0 6px}textarea{width:100%;min-height:220px;padding:14px;border:1px solid #b5c4ce;border-radius:6px;background:#fcfdfe;font:15px/1.65 system-ui,sans-serif;color:inherit;resize:vertical;overflow-wrap:anywhere}#custom{min-height:90px}button{font:inherit;cursor:pointer;border:1px solid var(--blue);background:var(--blue);color:white;padding:10px 16px;border-radius:6px}.secondary{background:white;color:var(--blue)}button:disabled{opacity:.45;cursor:default}.actions{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}.candidate{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid #e6ecf0;font-weight:400;margin:0}.candidate input{margin-top:7px;flex-shrink:0}.candidate span{overflow-wrap:anywhere}.candidate small{display:block;color:#526779}#candidates{max-height:300px;overflow:auto}.empty{color:#526779;padding:10px 0}.status{min-height:27px;color:var(--blue)}details{margin-top:24px}summary{cursor:pointer;font-weight:650}footer{font-size:13px;color:#526779;border-top:1px solid var(--line);margin-top:30px}code{word-break:break-all}#output{min-height:280px}.check{display:flex;gap:9px;align-items:flex-start;font-weight:400}.check input{margin-top:7px}[hidden]{display:none!important}:focus-visible{outline:3px solid #d89627;outline-offset:3px}@media(max-width:760px){header,main,footer{padding:18px}.grid{grid-template-columns:1fr}.panel{padding:18px}.actions button{flex:1}.pill{max-width:150px;text-align:center}textarea{font-size:16px}}
+</style></head><body><aside style="max-width:1180px;margin:12px auto;padding:12px 24px;background:#e1eaf2;color:#142d3c;font:14px/1.7 system-ui,sans-serif">这是同一工具的免费备用入口。首次打开需要联网，材料在本页处理。<a href="offline-kit.zip" download="发给AI前-完整离线工具包.zip">下载完整离线包 ZIP</a>，电脑完整解压后可使用本机版本。国内实机可达性仍待验证。</aside><header><a class="brand" href="index.html" target="_blank" rel="noopener noreferrer">发给 AI 前</a><span class="pill">免费使用说明</span></header><main>
+<h1>文字和截图，分别处理后再一起复核。</h1>
+<p>例如：你想让 AI 帮忙整理一段邮件，还要附上一张截图。文字里的姓名换成代号，不会改变截图里的同一姓名；两个部分都需要处理。</p>
+<div class="notice">这套流程帮助你检查和处理材料，不保证匿名化或适合外发。先用虚构示例熟悉操作；不适合发给外部服务的材料，不要因为替换或遮挡过就发送。</div>
+<nav class="actions" aria-label="流程步骤"><a href="#choose">选择材料</a><a href="#text">文字替换</a><a href="#meaning">会不会影响回答</a><a href="#image">截图遮挡</a><a href="#review">最后复核</a><a href="#restore">恢复代号</a></nav>
+<section id="choose" class="panel"><h2>1. 按材料选择入口</h2>
+<p>只有文字：<a href="index.html" target="_blank" rel="noopener noreferrer">打开文字代号替换</a>。只有图片：<a href="mask.html" target="_blank" rel="noopener noreferrer">打开截图实色遮挡</a>。两者都有：分别打开两个工具，最后一起复核。</p>
+<p>工具和说明链接会另开标签，不把输入内容传给另一页。需要恢复代号时，保留原文字页，不刷新、不重新生成。浏览器回收或关闭页面仍可能让映射丢失。</p></section>
+<section id="text" class="panel" style="margin-top:22px"><h2>2. 文字：补充词条 → 检查候选 → 生成 → 复核</h2>
+<p>粘贴文字后，把姓名、公司、地址等按原文逐行补充。自动规则只检查常见邮箱、部分大陆手机号和18位身份证样式，可能漏检或误检。</p>
+<p id="roundtripDemo">想先试完整流程：在文字页点击“试用虚构示例”→“生成替换文本”→“填入模拟回答”→“在本机恢复代号”。无需打开其他AI，模拟回答是明确标记的固定模板；不要把演示当作模型质量测试。修改示例原文或词条后，模拟入口会隐藏。</p><p>虚构示例：小林在示例公司工作，邮箱 demo@example.com。请给小林写一封进度提醒。补充框中分别填“小林”和“示例公司”，每行一条。</p>
+<p>取消误匹配项，再生成。同一批次内重复内容用同一代号。检查未替换的线索、确认复选框后，复制或下载替换后的 TXT；其中不包含映射表。</p>
+<p><a href="index.html#example" target="_blank" rel="noopener noreferrer">另开虚构文字示例</a> · <a href="index.html">打开本包文字工具</a></p></section>
+<section id="meaning" class="panel" style="margin-top:22px"><h2>换成代号，会不会影响 AI 回答？</h2>
+<p>可能。<strong>能恢复代号，只说明字面替换成功；不说明 AI 已经理解关系、保留事实或给出正确答案。</strong>下面是本工具对虚构文字的实际替换对照，没有调用 AI，也不是模型效果评测。这里的固定代号只用于说明，不能粘到另一个批次恢复。</p>
+<h3>例一：改写邮件，保留任务和人物关系</h3>
+<p>原文：客户小林：本周进度已更新，请在下周二前确认。联系邮箱 demo@example.com。</p>
+<p>补充词条“小林”，邮箱由规则列为候选；两项都选中后：</p>
+<p><code>客户〔替换_guide_自定义_1〕：本周进度已更新，请在下周二前确认。联系邮箱 〔替换_guide_邮箱_2〕。</code></p>
+<p>姓名和邮箱被替换，“客户”这个角色、进度事实和确认时间仍然可见。若任务只是调整语气，这些信息可能足以表达要求；具体模型是否完成，仍要检查回答。不要为了保留关系而额外补上能识别人的细节。</p>
+<h3>例二：规划路线，出发地和目的地是解题条件</h3>
+<p>原文：从上海出发到杭州，请给出交通路线。把“上海、杭州”作为两条词条替换后：</p>
+<p><code>从〔替换_guide_自定义_1〕出发到〔替换_guide_自定义_2〕，请给出交通路线。</code></p>
+<p>模型看不到这两个真实城市，不能仅凭代号确定具体路线。后来恢复城市名，也不能补出先前没有依据生成的交通信息。若关键条件不能提供给外部服务，应删减或改变任务，或改用适合该材料的处理方式；不要把“替换过”当作可以发送的理由。</p>
+<h3>发送前用三个问题判断</h3>
+<ol><li>要完成的是改写、整理，还是必须依赖被隐藏信息的查询与判断？</li><li>重复人物是否仍能对应，角色、指代、时间和先后关系是否仍清楚？</li><li>不看映射，只读替换结果，能否知道要求做什么，以及哪些事实没有提供？</li></ol>
+<p>需要 AI 引用代号时，可自行加一句要求：<code>文中〔替换…〕是代号。需要引用时逐字保留完整代号，不要猜测真实内容，也不要补充未提供的事实。</code>这只是指令，不能保证模型遵守。回答漏掉或改写代号时，工具不能猜回去；恢复后仍需核对事实。</p>
+<p><a href="index.html#example" target="_blank" rel="noopener noreferrer">用虚构示例试一次完整替换与恢复</a>，再决定这种方法是否适合当前任务。</p></section>
+<section id="image" class="panel" style="margin-top:22px"><h2>3. 截图：手动框选 → 复核 → 生成新的 PNG</h2>
+<p>载入图片，找出要遮挡的区域，用不透明黑块覆盖。可拖动或填写像素坐标，误遮挡时撤销。工具不自动寻找敏感信息。</p>
+<p>生成后放大检查新图的边缘和遗漏，再下载。发送这张新 PNG；原图没有被修改，仍保留原内容。</p>
+<p><a href="mask.html" target="_blank" rel="noopener noreferrer">另开截图工具，用虚构截图试一下</a> · <a href="mask.html">打开本包截图工具</a></p></section>
+<section id="review" class="panel" style="margin-top:22px"><h2>4. 发送前，把文字与图片放在一起检查</h2>
+<ul><li>文字里的姓名、地址、账号、密钥、内部链接，以及能推断身份的上下文，是否仍有遗漏？</li><li>新图片中，标题、头像、角落、二维码、浏览器栏或背景是否仍有不想发送的内容？</li><li>是否误选了原文、原截图、映射或恢复后的文本？确认选择的是替换结果和新的 PNG。</li><li>文字与截图能否相互补全出不想透露的信息？不确定时进一步删减，或不发送。</li></ul>
+<p>工具不自动把材料发给 AI。由你决定是否发送、发给谁、采用哪一份结果。</p></section>
+<section id="restore" class="panel" style="margin-top:22px"><h2>5. 可选：回到原文字页恢复 AI 回答中的代号</h2>
+<p>AI 保留了代号时，把回答粘回原文字页，展开恢复区域，再点击“在本机恢复代号”。只匹配当前批次的实际代号；旧批次或被改写的代号保持原样，不会推测补全。</p>
+<p>不要为了恢复而重新生成。刷新、重新检查、清空或关闭文字页会让旧映射失效；只靠替换后的 TXT 无法重建映射。恢复后的文本含原始信息，分享前需要重新判断。</p></section>
+<section style="margin-top:24px"><h2>离线与隐私边界</h2><p id="offlineKit"><span>当前为完整离线工具包</span>。电脑完整解压后，打开 index.html；两项工具和说明会在本地互相链接。不要只在压缩包预览里打开。</p><p>当前为备用网页。网页首次载入需要联网；下载并完整解压离线包后，两项工具与说明可在本机关联。公开反馈、复制的官网链接及徽章链接属于外部网站，需要联网；不会自动传递当前材料。</p><p>本应用不上传输入文本、图片或映射，不写入持久存储，不用统计脚本、不调用模型 API。托管访问日志、浏览器扩展、系统剪贴板同步和设备本身不由工具控制。图片文字识别、PDF解析与模型识别不提供。</p><p>完成一次实际任务后，可以在页尾讨论区只反馈：能否独立完成、哪里卡住、是否有再次使用的场景。无需也不要公开私人材料。</p></section>
+</main><footer><div id="publicFeedback"><p><a href="https://xinquji.com/posts/859930?tab=discussion" target="_blank" rel="noopener noreferrer">公开反馈（新趣集讨论区，需登录）</a></p><p>告诉我们：能否自行完成、哪里卡住、是否会再次使用。请勿在公开反馈中粘贴原文、图片、映射或私人联系方式；点击后将前往第三方网站。</p></div>示例材料为虚构。用真实任务判断是否省事，比工具功能数量更重要。</footer></body></html>

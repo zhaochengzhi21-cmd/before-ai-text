@@ -1,15 +1,15 @@
 {
-  "source_archive_sha256": "7bb991f0c3fdf005f6137610c9bf5801e6d52c09456a4dd2f3cb9e98c50711ee",
+  "source_archive_sha256": "a266a26d278c37d3eb3ac8b1f1ce02b39d2326ab0eb974ec478f84592d2cb581",
   "files": {
     "README.txt": "84fa82b71d2311f4bd824aa0238269fcf32eaaa0985beb60204a9d910f1cbb1b",
     "guide.html": "9f7b7557c3b3da717abff73e5981d2ea4ab9a0d6992a5d8d205305eb706507c7",
     "index.html": "15a0cb1fcaac80ed6182bdf310d1143c800bd9f581bdb2e6768fc1eb84e5f75a",
-    "mask.html": "dd18eb0fdecd0be6cf3d3f8f149f9a75daef7e01ce1350ca80da740aedb00627",
+    "mask.html": "be69a5483e84677cf691d29dce2c625088171192f5e60479cf0c835c7c21812b",
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "offline-kit.zip": "7bb991f0c3fdf005f6137610c9bf5801e6d52c09456a4dd2f3cb9e98c50711ee",
+    "offline-kit.zip": "a266a26d278c37d3eb3ac8b1f1ce02b39d2326ab0eb974ec478f84592d2cb581",
     "README.md": "03de87ab280f97065b93fed841d3fd3ba1a4877b9f93f568e6ee7049a0e56f96"
   },
-  "source_site_version": 28,
+  "source_site_version": 29,
   "model_api_calls": 0,
   "contains_user_materials": false,
   "contains_ownership_file": false

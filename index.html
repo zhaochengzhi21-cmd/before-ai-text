@@ -8,7 +8,8 @@ function scan(text,custom=''){
  if(typeof custom!=='string'||custom.length>20000)throw Error('补充词条过长。');
  const words=[...new Set(custom.split(/\r?\n/).map(x=>x.trim()).filter(Boolean))];if(words.length>100||words.some(w=>w.length>200))throw Error('最多补充 100 个词条，每条最多 200 字。');
  const matches=[];function add(start,end,value,type,rank){matches.push({start,end,value,type,rank});if(matches.length>2000)throw Error('候选项过多，请分段处理。');}
- for(const word of words){let i=0;while((i=text.indexOf(word,i))!==-1){add(i,i+word.length,word,'自定义',0);i+=word.length;}}
+ // Advance one code unit so repeated occurrences of the same literal term can overlap.
+ for(const word of words){let i=0;while((i=text.indexOf(word,i))!==-1){add(i,i+word.length,word,'自定义',0);i++;}}
  const rules=[['身份证样式',/(?<![A-Za-z0-9])\d{17}[\dXx](?![A-Za-z0-9])/g,1],['邮箱',/(?<![A-Za-z0-9.!#$%&'*+/=?^_`{|}~-])[A-Za-z0-9.!#$%&'*+/=?^_`{|}~-]{1,64}@[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?:\.[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?){1,10}(?![A-Za-z0-9-])/g,2],['手机号',/(?<![A-Za-z0-9])(?:\+?86[- ]?)?1[3-9]\d(?:[- ]?\d){8}(?![A-Za-z0-9])/g,3]];
  for(const [type,re,rank]of rules)for(const m of text.matchAll(re))add(m.index,m.index+m[0].length,m[0],type,rank);
  matches.sort((a,b)=>a.start-b.start||b.end-a.end||a.rank-b.rank);const accepted=[];for(const m of matches){const last=accepted[accepted.length-1];if(!last||m.start>=last.end){accepted.push({...m});continue}if(m.end<=last.end)continue;last.end=m.end;last.value=text.slice(last.start,last.end);last.type='重叠片段';}
